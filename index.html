@@ -3,54 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>calculator</title>
+    <title>Interactive Image Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <h1 class="heading">Welcome to Calculate me!</h1>
-    <div class="calculator">
-        <input type="text" id="display" disabled>
-        <div class="buttons">
-            <button>C</button>
-            <button>0</button>
-            <button>00</button>
-            <button>/</button>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>*</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>-</button>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>+</button>
-            <button>.</button>
-            <button>=</button>
+    <div class="gallery-container">
+        <header class="gallery-header">
+            <h1>Image Gallery</h1>
+            <p>Upload and view your favorite images</p>
+        </header>
+
+        <div class="upload-section">
+            <div class="upload-area" id="uploadArea">
+                <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                <p class="upload-text">Drag & Drop images here or click to browse</p>
+                <input type="file" id="fileInput" accept="image/*" multiple>
+            </div>
+            <div class="upload-progress" id="uploadProgress">
+                <div class="progress-bar" id="progressBar"></div>
+                <span class="progress-text" id="progressText">0% uploaded</span>
+            </div>
+        </div>
+
+        <div class="gallery-controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search images...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="recent">Recent</button>
+                <button class="filter-btn" data-filter="favorites">Favorites</button>
+            </div>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Images will be dynamically added here -->
+        </div>
+
+        <div class="lightbox" id="lightbox">
+            <div class="lightbox-content">
+                <img src="" alt="" id="lightboxImage">
+                <div class="lightbox-controls">
+                    <button class="lightbox-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="lightbox-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+                    <button class="lightbox-btn" id="closeBtn"><i class="fas fa-times"></i></button>
+                    <button class="lightbox-btn" id="favoriteBtn"><i class="far fa-heart"></i></button>
+                    <button class="lightbox-btn" id="downloadBtn"><i class="fas fa-download"></i></button>
+                </div>
+                <div class="image-info" id="imageInfo">
+                    <h3 class="image-title">Image Title</h3>
+                    <p class="image-date">Uploaded on: <span></span></p>
+                    <p class="image-size">Size: <span></span></p>
+                </div>
+            </div>
         </div>
     </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     <script src="script.js"></script>
 </body>
 </html>
